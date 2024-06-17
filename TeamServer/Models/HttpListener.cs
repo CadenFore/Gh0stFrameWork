@@ -11,72 +11,56 @@ using System.Threading.Tasks;
 
 namespace TeamServer.Models
 {
-
-
     // HttpListener class inherits from Listener class
     public class HttpListener : Listener
     {
-
 
         // Name property is overridden from the base class Listener and is read-only
         public override string Name { get; }
 
 
-
         // BindPort property is read-only and stores the port number on which the listener will bind
         public int BindPort { get; }
 
+        // CancellationTokenSource to manage the cancellation of the running host
+        private CancellationTokenSource _tokenSource;
 
 
         // Constructor for HttpListener that takes a name and a bind port as parameters
         public HttpListener(string name, int bindPort)
         {
-
-
             // Initialize the Name property with the provided name
             Name = name;
 
             // Initialize the BindPort property with the provided port number
             BindPort = bindPort;
-
-            private CancellationTokenSource _tokenSource;
-
-
-        
+        }
 
         // Override the Start method from the Listener base class
         public override async Task Start()
         {
 
-
             // Create a new HostBuilder for configuring and running the web host
             var hostBuilder = new HostBuilder()
-                 .ConfigureWebHostDefaults(host =>
-                 {
+                .ConfigureWebHostDefaults(host =>
+                {
+
+                    // Set the URL to bind to all network interfaces on the specified port
+                    host.UseUrls($"http://0.0.0.0:{BindPort}");
 
 
-                     // Set the URL to bind to all network interfaces on the specified port
-                     host.UseUrls($"http://0.0.0.0:{BindPort}");
+                    // Configure the application using the ConfigureApp method
+                    host.Configure(ConfigureApp);
 
 
-                     // Configure the application using the ConfigureApp method
-                     host.Configure(ConfigureApp);
-
-
-                     // Configure services using the ConfigureServices method
-                     host.ConfigureServices(ConfigureServices);
-
-
-                 });
-
+                    // Configure services using the ConfigureServices method
+                    host.ConfigureServices(ConfigureServices);
+                });
 
             var host = hostBuilder.Build();
 
             _tokenSource = new CancellationTokenSource();
-            host.RunAsync(_tokenSoruce.Token);
-
-            // Incomplete method: the host should be built and started here, but it's missing
-            // hostBuilder.Build().RunAsync(); // Example of what might be needed
+              host.RunAsync(_tokenSource.Token);
         }
 
 
@@ -92,7 +76,6 @@ namespace TeamServer.Models
         // Method to configure the application pipeline
         private void ConfigureApp(IApplicationBuilder app)
         {
-
 
             // Enable routing in the application
             app.UseRouting();
@@ -111,12 +94,7 @@ namespace TeamServer.Models
         // Override the Stop method from the Listener base class
         public override void Stop()
         {
-
-        _tokenSource.Cancel();
-           
-
+            _tokenSource.Cancel();
         }
-
-     
     }
 }

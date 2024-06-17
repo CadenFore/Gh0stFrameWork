@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamServer", "TeamServer\TeamServer.csproj", "{829062A3-95B1-4D2B-839B-DBDB62762885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamServer", "TeamServer\TeamServer.csproj", "{829062A3-95B1-4D2B-839B-DBDB62762885}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiModels", "ApiModels\ApiModels.csproj", "{DD83E3BF-C961-42CD-BBA8-67091FFA5C4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{829062A3-95B1-4D2B-839B-DBDB62762885}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{829062A3-95B1-4D2B-839B-DBDB62762885}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{829062A3-95B1-4D2B-839B-DBDB62762885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD83E3BF-C961-42CD-BBA8-67091FFA5C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD83E3BF-C961-42CD-BBA8-67091FFA5C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD83E3BF-C961-42CD-BBA8-67091FFA5C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD83E3BF-C961-42CD-BBA8-67091FFA5C4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
