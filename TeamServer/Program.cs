@@ -3,9 +3,8 @@ using TeamServer.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddSingleton<IListenerService, ListenerService>();
-
+builder.Services.AddSingleton<IAgentService, AgentService>();
 
 
 builder.Services.AddControllers();

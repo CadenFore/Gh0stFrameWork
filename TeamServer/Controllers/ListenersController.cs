@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using TeamServer.Services;
-using TeamServer.Models;
+using TeamServer.Models.Listeners;
 
 
 
@@ -20,7 +20,7 @@ namespace TeamServer.Controllers
     {
 
         private readonly IListenerService _listeners;
-
+        private readonly IAgentService _agentService;
 
         public ListenersController(IListenerService listeners)
         {
@@ -58,7 +58,8 @@ namespace TeamServer.Controllers
 
         {
 
-            var listener = new TeamServer.Models.HttpListener(request.Name, request.BindPort);
+            var listener = new TeamServer.Models.Listeners.HttpListener(request.Name, request.BindPort);
+            listener.Init(_agentService);
             listener.Start();
 
             _listeners.AddListener(listener);

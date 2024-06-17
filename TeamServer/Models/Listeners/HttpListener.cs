@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 
 
-namespace TeamServer.Models
+namespace TeamServer.Models.Listeners
 {
     // HttpListener class inherits from Listener class
     public class HttpListener : Listener
@@ -60,7 +60,7 @@ namespace TeamServer.Models
             var host = hostBuilder.Build();
 
             _tokenSource = new CancellationTokenSource();
-              host.RunAsync(_tokenSource.Token);
+            host.RunAsync(_tokenSource.Token);
         }
 
 
