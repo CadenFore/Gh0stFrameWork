@@ -34,7 +34,11 @@ namespace TeamServer.Models.Listeners
                 _agents.AddAgent(agent);
             }
 
-            return Ok("Your listener works");
+            var tasks = agent.GetPendingTasks();
+
+            //When you pass data into these object result methods, they automatically get serialized as JSON
+            //We could also take this data and hide it into a bigger fake http request or something similar
+            return Ok(tasks);
         }
 
         private AgentMetaData ExtractMetadata(IHeaderDictionary headers)
