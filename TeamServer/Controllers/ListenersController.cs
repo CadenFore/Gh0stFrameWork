@@ -22,11 +22,11 @@ namespace TeamServer.Controllers
         private readonly IListenerService _listeners;
         private readonly IAgentService _agentService;
 
-        public ListenersController(IListenerService listeners)
+        public ListenersController(IListenerService listeners, IAgentService agentService)
         {
 
             _listeners = listeners;
-
+            _agentService = agentService;
         }
 
 

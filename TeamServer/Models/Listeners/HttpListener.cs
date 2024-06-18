@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Threading;
 using System.Threading.Tasks;
-
+using TeamServer.Controllers;
 
 
 
@@ -48,10 +48,8 @@ namespace TeamServer.Models.Listeners
                     // Set the URL to bind to all network interfaces on the specified port
                     host.UseUrls($"http://0.0.0.0:{BindPort}");
 
-
                     // Configure the application using the ConfigureApp method
                     host.Configure(ConfigureApp);
-
 
                     // Configure services using the ConfigureServices method
                     host.ConfigureServices(ConfigureServices);
@@ -70,6 +68,7 @@ namespace TeamServer.Models.Listeners
 
             // Add controller services to the dependency injection container
             services.AddControllers();
+            services.AddSingleton(AgentService);
 
         }
 
