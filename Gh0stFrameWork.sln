@@ -5,7 +5,9 @@ VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamServer", "TeamServer\TeamServer.csproj", "{829062A3-95B1-4D2B-839B-DBDB62762885}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiModels", "ApiModels\ApiModels.csproj", "{DD83E3BF-C961-42CD-BBA8-67091FFA5C4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiModels", "ApiModels\ApiModels.csproj", "{DD83E3BF-C961-42CD-BBA8-67091FFA5C4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agent", "Agent\Agent.csproj", "{09AFC4CD-AE17-4D66-AF56-67AB558B8401}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DD83E3BF-C961-42CD-BBA8-67091FFA5C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD83E3BF-C961-42CD-BBA8-67091FFA5C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD83E3BF-C961-42CD-BBA8-67091FFA5C4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09AFC4CD-AE17-4D66-AF56-67AB558B8401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09AFC4CD-AE17-4D66-AF56-67AB558B8401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09AFC4CD-AE17-4D66-AF56-67AB558B8401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09AFC4CD-AE17-4D66-AF56-67AB558B8401}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
