@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Agent.Models
 {
-    public class AgentMetaData
+    public class AgentMetadata
     {
         public string Id { get; set; }
 
